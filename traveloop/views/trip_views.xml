@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_trip_form" model="ir.ui.view">
+    <field name="name">traveloop.trip.form</field>
+    <field name="model">traveloop.trip</field>
+    <field name="arch" type="xml">
+      <form string="Trip">
+        <header>
+          <field name="state" widget="statusbar"/>
+        </header>
+        <sheet>
+          <group>
+            <field name="name" placeholder="Trip Name"/>
+            <field name="start_date"/>
+            <field name="end_date"/>
+            <field name="total_budget"/>
+            <field name="is_public"/>
+            <field name="description"/>
+          </group>
+          <notebook>
+            <page string="Itinerary Stops">
+              <field name="stop_ids">
+                <tree editable="bottom">
+                  <field name="city_id"/>
+                  <field name="arrive_date"/>
+                  <field name="leave_date"/>
+                  <field name="stay_cost"/>
+                  <field name="transport_cost"/>
+                  <field name="meal_cost"/>
+                  <field name="total_cost"/>
+                </tree>
+              </field>
+            </page>
+            <page string="Budget">
+              <group>
+                <field name="total_cost" readonly="1"/>
+                <field name="total_budget"/>
+              </group>
+            </page>
+            <page string="Packing Checklist">
+              <field name="checklist_ids">
+                <tree editable="bottom">
+                  <field name="item"/>
+                  <field name="category"/>
+                  <field name="is_packed"/>
+                </tree>
+              </field>
+            </page>
+            <page string="Notes">
+              <field name="note_ids">
+                <tree editable="bottom">
+                  <field name="title"/>
+                  <field name="content"/>
+                  <field name="date"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_trip_list" model="ir.ui.view">
+    <field name="name">traveloop.trip.list</field>
+    <field name="model">traveloop.trip</field>
+    <field name="arch" type="xml">
+      <tree string="My Trips">
+        <field name="name"/>
+        <field name="start_date"/>
+        <field name="end_date"/>
+        <field name="stop_count"/>
+        <field name="total_cost"/>
+        <field name="total_budget"/>
+        <field name="state"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="action_trip_list" model="ir.actions.act_window">
+    <field name="name">My Trips</field>
+    <field name="res_model">traveloop.trip</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="action_city_list" model="ir.actions.act_window">
+    <field name="name">Cities</field>
+    <field name="res_model">traveloop.city</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="action_activity_list" model="ir.actions.act_window">
+    <field name="name">Activities</field>
+    <field name="res_model">traveloop.activity</field>
+    <field name="view_mode">list,form</field>
+  </record>
+</odoo>

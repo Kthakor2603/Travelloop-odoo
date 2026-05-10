@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_traveloop_city,traveloop.city,model_traveloop_city,,1,1,1,1
+access_traveloop_activity,traveloop.activity,model_traveloop_activity,,1,1,1,1
+access_traveloop_trip,traveloop.trip,model_traveloop_trip,,1,1,1,1
+access_traveloop_stop,traveloop.stop,model_traveloop_stop,,1,1,1,1
+access_traveloop_checklist,traveloop.checklist,model_traveloop_checklist,,1,1,1,1
+access_traveloop_note,traveloop.note,model_traveloop_note,,1,1,1,1

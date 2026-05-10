@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <menuitem id="menu_traveloop_root" name="Traveloop" sequence="10"/>
+  <menuitem id="menu_my_trips" name="My Trips" parent="menu_traveloop_root" action="action_trip_list" sequence="1"/>
+  <menuitem id="menu_cities" name="Cities" parent="menu_traveloop_root" action="action_city_list" sequence="2"/>
+  <menuitem id="menu_activities" name="Activities" parent="menu_traveloop_root" action="action_activity_list" sequence="3"/>
+</odoo>
